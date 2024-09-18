@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% block content %}
+<h1>{{client.email}}</h1>
+<form action="/clients/{{client.id}}/" method="post">
+    {% csrf_token %}
+    {{ form }}
+    <input type="submit" value="Submit">
+</form>
+{% if message %}
+    {% if message.success %}
+        <h3>Success</h3>
+        <p>{{message.success}}</p>
+    {% else %}
+        <h3>Error</h3>
+        <p>{{message.error}}</p>
+    {% endif %}
+{% endif %}
+<h2>Registrations</h2>
+<table>
+    {% for registration in registrations %}
+    <tr>
+        <td>{{ registration.registration }}<td>
+        <td><a href="/registrations/{{registration.id}}/update/">edit</a></td>
+        <td><a href="/registrations/{{registration.id}}/delete/">delete</a></td>
+    </tr>
+    {% endfor %}
+</table>
+{% endblock %}

@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <title>{% block title %}License Registrations{% endblock %}</title>
+</head>
+
+<body>
+    <nav id="header" class="navbar navbar-light bg-light">
+        {% block header %}
+        <a href="/">Home</a>
+        {% endblock %}
+    </nav>
+
+    <div id="content">
+        {% block content %}{% endblock %}
+    </div>
+</body>
+</html>

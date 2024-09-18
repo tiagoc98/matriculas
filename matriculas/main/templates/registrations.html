@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+{% block content %}
+<h1>Registrations</h1>
+<ul>
+    {% for registration in registrations %}
+    <li>
+        <a  href="/clients/{{registration.client.id}}/">{{ registration.client.email }}: {{ registration.registration }}</a>
+    </li>
+    {% endfor %}
+</ul>
+{% endblock %}
